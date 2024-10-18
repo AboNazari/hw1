@@ -4,7 +4,7 @@
 }
 
 body {
-  /* background-image: url(https://cdn.imgchest.com/files/6yxkcg93k7w.png); */
+  background-image: url(https://cdn.imgchest.com/files/6yxkcg93k7w.png);
   background-repeat: no-repeat;
   max-width: 1143px;
   min-height: 1583px;
@@ -17,35 +17,31 @@ body {
   display: grid;
   grid-template-rows:
     minmax(100px, auto) minmax(513px, auto) minmax(384px, auto)
-    minmax(573px, auto);
+    minmax(573px, auto); /* Make rows responsive */
 }
 
 .row1 {
   display: grid;
-  grid-template-columns: minmax(198px, 200px) minmax(300px, 1fr);
+  grid-template-columns: minmax(198px, 198px) minmax(300px, 1fr); /* Keep .box1 fixed and .box5 flexible */
 }
 
 .row4 {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(
-      150px,
+  grid-template-columns: minmax(435px, 1fr) minmax(660px, 1fr) minmax(
+      437px,
       1fr
-    ); /* Responsive columns */
+    ); /* Make columns responsive */
 }
 
-.box1,
-.box2,
-.box3,
-.box4,
-.box5,
-.box6,
-.box7 {
-  border: 2px dashed blue;
-  padding: 10px;
+.box1 {
+  grid-column: 1;
+  border-right: 2px dashed blue; /* Add vertical border */
 }
 
 .box5 {
+  grid-column: 2;
   background-color: rgba(0, 0, 0, 0.4);
+  border-left: 2px dashed blue; /* Add vertical border */
 }
 
 .box5 > ul {
@@ -53,7 +49,7 @@ body {
   display: flex;
   align-items: center;
   color: white;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -80,22 +76,95 @@ body {
   margin-left: auto;
 }
 
+.box2 {
+  grid-row: 2;
+  border-top: 2px dashed blue;
+  border-bottom: 2px dashed blue;
+}
+
+.box3 {
+  grid-row: 3;
+  border-top: 2px dashed blue;
+  border-bottom: 2px dashed blue;
+}
+
+.box4 {
+  grid-column: 1 / 2;
+  border-right: 2px dashed blue;
+}
+
+.box6 {
+  grid-column: 2 / 3;
+  border-left: 2px dashed blue;
+  border-right: 2px dashed blue;
+}
+
+.box7 {
+  grid-column: 3 / 4;
+  border-left: 2px dashed blue;
+}
+
+.container > * {
+  border-top: 2px dashed blue;
+  border-bottom: 2px dashed blue;
+  border-right: 2px dashed blue;
+  border-left: 2px dashed blue;
+}
+
 /* Media Query for when the browser width is 500px or less */
 @media (max-width: 500px) {
   .container {
     grid-template-rows: repeat(
-      7,
+      8,
       minmax(100px, auto)
-    ); /* Each box takes a row */
+    ); /* Adjust for stacking layout */
   }
 
-  .row1,
+  .row1 {
+    grid-template-columns: 1fr; /* Make row1 a single column */
+    grid-template-rows: auto auto; /* Two rows, one for .box1 and one for .box5 */
+  }
+
+  .box1 {
+    grid-column: 1;
+    grid-row: 1; /* Place .box1 in the first row */
+    border-right: none;
+    border-bottom: 2px dashed blue; /* Add bottom border */
+  }
+
+  .box5 {
+    grid-column: 1;
+    grid-row: 2; /* Place .box5 in the second row */
+    border-left: none;
+  }
+
   .row4 {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr; /* Make row4 a single column */
+    grid-template-rows: auto auto auto; /* Stack the boxes */
+  }
+
+  .box4 {
+    grid-row: 1;
+  }
+
+  .box6 {
+    grid-column: 1;
+    grid-row: 2; /* Stack .box6 below .box4 */
+    border-left: none;
+    border-right: none;
+    border-top: 2px dashed blue; /* Add top border for separation */
+  }
+
+  .box7 {
+    grid-column: 1;
+    grid-row: 3; /* Stack .box7 below .box6 */
+    border-left: none;
+    border-right: none;
+    border-top: 2px dashed blue; /* Add top border for separation */
   }
 
   .box5 > ul {
-    flex-direction: column; /* Stack the list items vertically */
+    flex-direction: column; /* Stack list items vertically */
     align-items: flex-start;
   }
 
