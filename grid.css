@@ -1,3 +1,5 @@
+/* grid.css */
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -10,54 +12,50 @@ body {
   min-height: 1583px;
   font-size: 2rem;
   opacity: 0.5;
-  color: blue;
 }
 
 .container {
   display: grid;
-  grid-template-rows: 100px 513px 384px 573px;
+  grid-template-columns: 200px 233px 663px 439px;
+  grid-template-rows: 100px 512px 385px 573px;
+  grid-template-areas:
+    "box1 box5 box5 box5"
+    "box2 box2 box2 box2"
+    "box3 box3 box3 box3"
+    "box4 box4 box6 box7";
+  max-width: 1143px;
+  min-height: 1583px;
+  font-size: 2rem;
 }
 
-.row1 {
-  display: grid;
-  grid-template-columns: 198px 1334px; /* Adjust widths as needed */
-}
-
-.row4 {
-  display: grid;
-  grid-template-columns: 435px 660px 437px;
+.container > * {
+  border: 2px dashed blue;
 }
 
 .box1 {
-  grid-column: 1;
+  grid-area: box1;
 }
 
 .box5 {
-  grid-column: 2;
+  grid-area: box5;
 }
 
 .box2 {
-  grid-row: 2;
+  grid-area: box2;
 }
 
 .box3 {
-  grid-row: 3;
+  grid-area: box3;
 }
 
 .box4 {
-  grid-column: 1 / 2;
+  grid-area: box4;
 }
 
 .box6 {
-  grid-column: 2 / 3;
+  grid-area: box6;
 }
 
 .box7 {
-  grid-column: 3 / 4;
-}
-
-.container > *,
-.row1 > *,
-.row4 > * {
-  border: 2px dashed blue;
+  grid-area: box7;
 }

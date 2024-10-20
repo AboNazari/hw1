@@ -20,19 +20,6 @@ body {
     minmax(573px, auto); /* Make rows responsive */
 }
 
-.row1 {
-  display: grid;
-  grid-template-columns: minmax(198px, 198px) minmax(300px, 1fr); /* Keep .box1 fixed and .box5 flexible */
-}
-
-.row4 {
-  display: grid;
-  grid-template-columns: minmax(435px, 1fr) minmax(660px, 1fr) minmax(
-      437px,
-      1fr
-    ); /* Make columns responsive */
-}
-
 .box1 {
   grid-column: 1;
   border-right: 2px dashed blue; /* Add vertical border */
@@ -127,10 +114,7 @@ body {
     ); /* Adjust for stacking layout */
   }
 
-  .row1 {
-    grid-template-columns: 1fr; /* Make row1 a single column */
-    grid-template-rows: auto auto; /* Two rows, one for .box1 and one for .box5 */
-  }
+
 
   .box1 {
     grid-column: 1;
