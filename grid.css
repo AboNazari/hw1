@@ -8,7 +8,7 @@
 body {
   background-image: url(https://cdn.imgchest.com/files/6yxkcg93k7w.png);
   background-repeat: no-repeat;
-  max-width: 1143px;
+  max-width: 1540px;
   min-height: 1583px;
   font-size: 2rem;
   opacity: 0.5;
@@ -23,9 +23,6 @@ body {
     "box2 box2 box2 box2"
     "box3 box3 box3 box3"
     "box4 box4 box6 box7";
-  max-width: 1143px;
-  min-height: 1583px;
-  font-size: 2rem;
 }
 
 .container > * {
