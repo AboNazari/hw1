@@ -14,9 +14,9 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns:
-    minmax(200px, 1fr) minmax(233px, 1fr) minmax(663px, 1fr)
-    minmax(439px, 1fr);
+  width: 100%;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   grid-template-rows: 100px 512px 385px 573px;
   grid-template-areas:
     "box1 box5 box5 box5"
@@ -24,6 +24,17 @@ body {
     "box3 box3 box3 box3"
     "box4 box4 box6 box7";
 }
+
+@media (min-width: 1540px) {
+  .container {
+    max-width: 1540px;
+    margin: 0 auto;
+    grid-template-columns: 200px 232px 663px 439px;
+  }
+}
+
+
+
 
 .container > * {
   border: 2px dashed blue;
