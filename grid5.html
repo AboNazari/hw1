@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 10</title>
+    <link rel="stylesheet" href="grid2b.css" class="style" />
+  </head>
+  <body>
+    <button
+      onclick="switchStyle()"
+      style="position: absolute; top: 0; right: 0"
+    >
+      Style
+    </button>
+    <img
+      src="https://cdn.imgchest.com/files/wye3cd58r4b.png"
+      style="position: absolute; top: 0; left: 0; z-index: -1"
+    />
+    <div class="container">
+      <div class="box1" id="logo">
+        <img src="./hh.png" alt="hh" />
+      </div>
+      <div class="box5" id="menu">
+        <ul>
+          <li>For employers</li>
+          <li>Help</li>
+          <li>Create resume</li>
+          <li>To come in</li>
+        </ul>
+      </div>
+      <div class="box2">
+        <h1>Find your dream job</h1>
+        <p>
+          We have 100,000 jobs for you!
+          <br />
+        </p>
+        <button>Find a job</button>
+      </div>
+      <div class="box3">
+        <div class="container">
+          <div class="card">
+            <h3>Jobs of the day</h3>
+            <p>20 000 – 50 000 KGS</p>
+            <p>14 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Companies of the day</h3>
+            <p>23 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Work from home</h3>
+            <p>79 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Part-time job</h3>
+            <p>900 – 166 800 KGS</p>
+            <p>231 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Administrator</h3>
+            <p>900 – 43 500 KGS</p>
+            <p>95 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Operator</h3>
+            <p>9 000 – 85 800 KGS</p>
+            <p>131 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Programmer</h3>
+            <p>6 100 – 388 100 KGS</p>
+            <p>125 vacancies</p>
+          </div>
+          <div class="card">
+            <h3>Manager</h3>
+            <p>4 800 – 126 000 KGS</p>
+            <p>641 vacancies</p>
+          </div>
+        </div>
+      </div>
+      <div class="box4">
+        <h2>Work in Bishkek</h2>
+        <img src="work.png" alt="Work Image" />
+        <ul>
+          <li>LLC I-Trade <span>2</span></li>
+          <li>LLC Alliance Asia Travel <span>1</span></li>
+          <li>Mairam Group <span>1</span></li>
+          <li>HTI Group <span>5</span></li>
+          <li>LLC Smart Fashion <span>1</span></li>
+          <li>TM Toyboys <span>1</span></li>
+          <li>well furniture <span>1</span></li>
+          <li>LLC GABB Trade<span>2</span></li>
+          <li>English Zone <span>2</span></li>
+          <li>exotic tour <span>1</span></li>
+          <li>Smoke.kg <span>2</span></li>
+          <li>MFC Alma Credit<span>1</span></li>
+        </ul>
+      </div>
+
+      <div class="box6"></div>
+
+      <div class="box7"></div>
+    </div>
+
+    <script>
+      function switchStyle() {
+        let style = document.querySelector(".style");
+        if (style.getAttribute("href") == "grid4.css") {
+          style.setAttribute("href", "grid2b.css");
+        } else {
+          style.setAttribute("href", "grid4.css");
+        }
+      }
+    </script>
+  </body>
+</html>
